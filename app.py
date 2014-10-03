@@ -15,7 +15,7 @@ class Info(wsme.types.Base):
 class HelloWorld(restful.Resource):
 
     @signature(Info)
-    def get():
+    def get(self):
         return Info(message="hello")
 
     @signature(None, body=Info)
