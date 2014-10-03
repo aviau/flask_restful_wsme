@@ -18,8 +18,8 @@ class HelloWorld(restful.Resource):
     def get():
         return Info(message="hello")
 
-    @signature(None, Info)
-    def post(info):
+    @signature(None, body=Info)
+    def post(self, info):
         print("Got a message: %s" % info.message)
 
 api.add_resource(HelloWorld, '/hello')

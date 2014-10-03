@@ -1,4 +1,3 @@
 flask
 nose
-wsme
 flask-restful

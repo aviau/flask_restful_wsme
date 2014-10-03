@@ -18,8 +18,11 @@ class FunctionalTest(unittest.TestCase):
     def test_post(self):
         response = self.app.post(
              '/hello',
-             data={"message": "hello"}
-        )
+             data=json.dumps({"message": "hello"}),
+            headers={
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'}
+    )
 
         self.assertEqual(
             200,
