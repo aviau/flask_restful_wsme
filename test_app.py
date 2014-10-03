@@ -16,7 +16,11 @@ class FunctionalTest(unittest.TestCase):
         )
 
     def test_post(self):
-        response = self.app.post('/hello')
+        response = self.app.post(
+             '/hello',
+             data={"message": "hello"}
+        )
+
         self.assertEqual(
             200,
             response.status_code
